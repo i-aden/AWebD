@@ -124,7 +124,7 @@ let harry2 = { name: 'Harry Smith', age } // The age property is now 23
 //=======
 // Arrays
 //=======
-const numbers = [1, 2, 3]  // This is an object with five properties: '0', '1', '2', '3', and 'length'.
+const numbers = [1, 2, 3, 4]  // This is an object with five properties: '1', '2', '3', '4', and 'length'.
 
 // The length property is one more than the highest index, converted to a number. 
 // The value of numbers.length is the number 4.
@@ -403,7 +403,7 @@ for (const i in some_numbers)
 // Suppose you look for the position of the first negative element in an array.
 // Upon seeing a negative element, you just want to exit the loop, so that 'ind' 
 // stays at the position of the element. That is what the break statement accomplishes.
-let arr = [1,2,3,4,-5,6,7]
+arr = [1,2,3,4,-5,6,7]
 let ind = 0
 while (ind < arr.length) {
   if (arr[i] < 0) break
@@ -415,17 +415,22 @@ while (ind < arr.length) {
 // When you have found it, you need to break out of two loops. 
 // Add a label (that is, an identifier followed by a colon) before the outer loop. 
 // A labeled break jumps after the labeled loop:
+const arr_2d = [
+  [5,12,8,23],[15,2,18,-3],[2,1,-7,3],
+  [5,2,8,3],[5,2,8,3],[5,2,8,3]
+];
 i = 0
 let j = 0
 outer:
-while (i < arr.length) {
+while (i < arr_2d.length) {
   while (j < arr[i].length) {
-    if (arr[i][j] < 0) break outer
+    if (arr_2d[i][j] < 0) break outer
     j++
   }
   i++
   j = 0
 }
+
 
 // Finally, there is a 'continue' statement that, like the 'break' statement, breaks the regular flow of control. 
 // The 'continue' statement transfers control to the end of the innermost enclosing loop. 
